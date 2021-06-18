@@ -59,7 +59,7 @@ Let's say we had a coin flip contract — heads you double your money, tails you
 
 If I were running a node, I could publish a transaction only to my own node and not share it. I could then run the coin flip function to see if I won — and if I lost, choose not to include that transaction in the next block I'm solving. I could keep doing this indefinitely until I finally won the coin flip and solved the next block, and profit.
 
-**So how do we generate random numbers safely in Ethereum?**😢
+**So how do we generate random numbers safely in Ethereum?** 😢
 
 Because the entire contents of the blockchain are visible to all participants, this is a hard problem. You can read [this StackOverflow thread](https://ethereum.stackexchange.com/questions/191/how-can-i-securely-generate-a-random-number-in-my-smart-contract) for some ideas. One idea would be to use an **oracle** to access a random number function from outside of the Ethereum blockchain.
 

@@ -32,6 +32,7 @@ In other way, you can make a contract then make it call `flip` function of the t
 The best source of randomness we have in Solidity is the `keccak256` hash function.
 
 We could do something like the following to generate a random number:
+
 ```
 // Generate a random number between 1 and 100:
 uint randNonce = 0;
@@ -39,6 +40,7 @@ uint random = uint(keccak256(abi.encodePacked(now, msg.sender, randNonce))) % 10
 randNonce++;
 uint random2 = uint(keccak256(abi.encodePacked(now, msg.sender, randNonce))) % 100;
 ```
+
 What this would do is take the timestamp of `now`, the `msg.sender`, and an incrementing `nonce` (a number that is only ever used once, so we don't run the same hash function with the same input parameters twice).
 
 It would then "pack" the inputs and use `keccak` to convert them to a random hash. Next, it would convert that hash to a `uint`, and then use `% 100` to take only the last 2 digits. This will give us a totally random number between 0 and 99.
@@ -76,7 +78,8 @@ contract CoinFlip {
   using SafeMath for uint256;
   uint256 public consecutiveWins;
   uint256 lastHash;
-  uint256 FACTOR = 57896044618658097711785492504343953926634992332820282019728792003956564819968;
+  uint256 FACTOR =
+    57896044618658097711785492504343953926634992332820282019728792003956564819968;
 
   constructor() {
     consecutiveWins = 0;

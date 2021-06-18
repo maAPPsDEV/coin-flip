@@ -22,11 +22,13 @@ _Hint:_
 ## What is the most difficult challenge?
 
 **Simulate target contract, thus predict the result.**
+
 In `CoinFlip` contract, the seed of the random number is the number of previous mined block.
 So, you need to predict the block number in order to win. Of course, you can if you have a psychic abilities. 🦸
 In other way, you can make a contract then make it call `flip` function of the target contract. At the moment, the block number is the same both in your contract and target contract.
 
 **Random number generation via `keccak256`**
+
 The best source of randomness we have in Solidity is the `keccak256` hash function.
 
 We could do something like the following to generate a random number:
@@ -55,7 +57,8 @@ Let's say we had a coin flip contract — heads you double your money, tails you
 
 If I were running a node, I could publish a transaction only to my own node and not share it. I could then run the coin flip function to see if I won — and if I lost, choose not to include that transaction in the next block I'm solving. I could keep doing this indefinitely until I finally won the coin flip and solved the next block, and profit.
 
-**So how do we generate random numbers safely in Ethereum?**
+**So how do we generate random numbers safely in Ethereum?**😢
+
 Because the entire contents of the blockchain are visible to all participants, this is a hard problem. You can read [this StackOverflow thread](https://ethereum.stackexchange.com/questions/191/how-can-i-securely-generate-a-random-number-in-my-smart-contract) for some ideas. One idea would be to use an **oracle** to access a random number function from outside of the Ethereum blockchain.
 
 [Predicting Random Numbers in Ethereum Smart Contracts](https://blog.positive.com/predicting-random-numbers-in-ethereum-smart-contracts-e5358c6b8620)

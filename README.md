@@ -64,6 +64,7 @@ If I were running a node, I could publish a transaction only to my own node and 
 Because the entire contents of the blockchain are visible to all participants, this is a hard problem. You can read [this StackOverflow thread](https://ethereum.stackexchange.com/questions/191/how-can-i-securely-generate-a-random-number-in-my-smart-contract) for some ideas. One idea would be to use an **oracle** to access a random number function from outside of the Ethereum blockchain.
 
 [Predicting Random Numbers in Ethereum Smart Contracts](https://blog.positive.com/predicting-random-numbers-in-ethereum-smart-contracts-e5358c6b8620)
+
 [How can I securely generate a random number in my smart contract?](https://ethereum.stackexchange.com/questions/191/how-can-i-securely-generate-a-random-number-in-my-smart-contract)
 
 ## Source Code
@@ -131,6 +132,8 @@ yarn install
 ```
 yarn test
 ```
+
+You should see you won 10 times in a row.
 
 ```
 truffle(development)> test
